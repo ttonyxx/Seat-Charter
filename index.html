@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Created and maintained by Tony Xin (http://tonyxin.ga) -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143310831-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-143310831-1');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="Keywords" content="Seat Charter,Seat,Chart,Seat Creator,Tony Xin, Teachers, Teacher, Seats, Student's Seats">
+    <meta name="Description" content="This is a tool that helps teachers create seating charts for their students and track information about them.">
+    <meta name="google-signin-client_id" content="1023069465855-pvbpvhljlk8f8dh253c6mrpmas37uge5.apps.googleusercontent.com">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/css/animate.css">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link media="print" href="src/css/print.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/styles.css">
+
+    <title>Seat Charter</title>
+
+</head>
+
+<body>
+
+    <div id="print-blocker"></div>
+
+    <center>
+        <h1 class="animated fadeIn" id="title">Seat Charter</h1>
+    </center>
+
+    <div class="g-signin2" id="signIn" data-onsuccess="onSignIn"></div>
+    <br />
+    <br />
+    <a href="#" onclick="signOut()">
+        <button id="signOut">
+            <img id="avatar" alt="Avatar" style="width:30px; margin-right: 5px; vertical-align: middle;">Sign out</button>
+    </a>
+
+    <button id="pull">&#9776;</button>
+
+    <div id="pull-bar">
+        <center>
+
+            <button id="exit" class="exit">&times;</button>
+
+            <button id="settings">
+                <img id="settings-icon" src="images/settings.png" style="width: 30px; height: 30px;">
+            </button>
+
+            <div class="custom-select" style="width: 180px; margin-top: 20px;">
+                <select id="class-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <input type="text" id="name-input" placeholder="Student Name">
+                <button id="add-btn">Add</button>
+            </div>
+
+            <div id="students-display">
+            </div>
+
+            <div id="container">
+                <center>
+                    <button id="randomize">Randomize</button>
+                    <button id="sync">Sync Other Classes</button>
+                </center>
+            </div>
+
+        </center>
+
+        <div id="slider" style="display:none; width: 130px;"></div>
+
+    </div>
+
+    <div id="settings-background">
+        <center>
+            <div id="settings-window">
+                <button id="exit-settings" class="exit">&times;</button>
+                <h2 style="line-height: 1.9; margin-bottom: 0px">
+                    <strong>Settings</strong>
+                </h2>
+                <h3 style="margin-top: 0px; margin-bottom: 0px;">Student</h3>
+                <div id="student-settings">
+                    <p># of rows</p>
+                    <div>
+                        <select id="rows-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;
+                    <p># of cols</p>
+                    <div>
+                        <select id="cols-select">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="color-settings">
+                    <p>Color</p>
+                    &nbsp;
+                    <div id="color-choices">
+                    </div>
+                </div>
+
+                <br><br><br>
+                <button id="tutorial-btn">Tutorial Video<br><i id="down" class="arrow"></i></button>
+                <br><br>
+                <div id="tutorial-video">
+                    <video width="500" controls muted>
+                        <source src="videos/seatcharter.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </center>
+    </div>
+
+    <div id="students-container">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="src/js/wow.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="dist/bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "seatcharter",
+  "version": "1.0.0",
+  "description": "This website allows teachers to make a seating chart for their students",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/app.js --output dist/bundle.js --mode development",
+    "build:prod": "webpack src/js/app.js --output dist/bundle.js --mode production"
+  },
+  "keywords": [
+    "Seat",
+    "Charter"
+  ],
+  "author": "Tony Xin",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}

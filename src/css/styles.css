@@ -1,0 +1,455 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.moveable {
+    position: absolute;
+    left: 310px;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    font-family: 'Roboto', sans-serif;
+    z-index: -1;
+    transition: outline 0.2s;
+    width: 140px;
+}
+
+.moveableheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+    transition: all 0.1s;
+}
+
+#slider {
+    outline: none;
+    position: abosolute;
+    bottom: -50px;
+    left: 85px;
+    margin-bottom: 20px;
+}
+
+th {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+th:hover {
+    cursor: pointer;
+}
+
+input {
+    z-index: 100;
+    width: 170px;
+    height: 40px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    border: 1px solid gray;
+    outline: none;
+    padding-left: 5px;
+}
+
+input:focus {
+    border: 1px solid rgb(122, 173, 255);
+}
+
+#add-btn {
+    height: 40px;
+    width: 70px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: rgb(122, 173, 255);
+    border: none;
+}
+
+#pull-bar {
+    background-color: rgb(188, 188, 188);
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: -300px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: left 0.6s;
+    transition: left 0.6s;
+    overflow-y: auto;
+}
+
+#add-btn:hover {
+    background-color: rgb(132, 179, 255);
+}
+
+.exit {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: all 0.3s;
+}
+
+.exit:hover {
+    color: rgb(239, 92, 69);
+}
+
+#settings {
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    transition: all 0.3s;
+}
+
+#settings-icon {
+    transition: all 0.3s;
+}
+
+#settings-icon:hover {
+    transform: rotate(90deg);
+}
+
+#pull {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+button {
+    font-family: 'Roboto', sans-serif;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+#signIn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#signOut {
+    width: 120px;
+    height: 35px;
+    font-family: 'Roboto', sans-serif;
+    background-color: red;
+    transition: background-color 0.3s;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#signOut:hover {
+    background-color: rgb(239, 92, 69);
+}
+
+img {
+    border-radius: 50%;
+}
+
+#students-display {
+    overflow-y: auto;
+    height: 60vh;
+    padding-top: 25px;
+}
+
+.student-info {
+    width: 250px;
+    height: 30px;
+    border-bottom: 1px solid gray;
+    -webkit-transition: background-color 0.2s, height 0.5s;
+    transition: background-color 0.2s, height 0.5s;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.student-info:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.description {
+    resize: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    outline: none;
+    border: 1px solid gray;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+}
+
+.delete {
+    height: 15px;
+    width: 50px;
+    font-size: 10px;
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    border: none;
+}
+
+.delete:hover {
+    background-color: rgb(239, 92, 69);
+}
+
+.swal-modal {
+    font-family: Helvetica;
+}
+
+#randomize {
+    width: 110px;
+    height: 40px;
+    background-color: rgb(249, 183, 77);
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    float: left;
+    transition: 0.3s all;
+}
+
+#randomize:hover {
+    background-color: rgb(252, 196, 106);
+}
+
+#sync {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(249, 183, 77);
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    float: right;
+    transition: 0.3s all;
+}
+
+#sync:hover {
+    background-color: rgb(252, 196, 106);
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
+#title {
+    margin-top: 25vh;
+}
+
+select:focus {
+    outline: none;
+}
+
+select {
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: rgb(171, 177, 186);
+}
+
+#container {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+#settings-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    transition: all 0.9s;
+}
+
+#settings-window {
+    width: 45vw;
+    min-width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: calc(100vh / 2 - 150px);
+    padding: 0px 5px;
+    position: relative;
+    transition: all 0.7s;
+}
+
+#student-settings {
+    height: 40px;
+    padding-top: 0px;
+}
+
+#student-settings>* {
+    display: inline-block;
+}
+
+#student-settings>p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+#class-select {
+    background-color: rgb(227, 227, 227);
+}
+
+#color-settings {
+    height: 40px;
+}
+
+#color-settings>* {
+    display: inline-block;
+}
+
+#color-settings>p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+#color-choices>button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.3s;
+    position: relative;
+    top: 3px;
+}
+
+#color-choices>button:hover {
+    transform: scale(1.1);
+}
+
+video {
+    outline: none;
+}
+
+i {
+    border: solid rgb(3, 165, 252);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+#down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 0.3;
+}
+
+#tutorial-btn {
+    border: none;
+    background: transparent;
+    color: rgb(2, 142, 217);
+    transition: all 0.3s;
+}
+
+#tutorial-btn:hover {
+    color: rgb(2, 152, 232);
+    transform: scale(1.05);
+}
+
+#tutorial-video {
+    display: none;
+}
+
+#print-blocker {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 30;
+}
+
+@media print {
+    
+    @page {
+        size: landscape;
+        padding: 0cm;
+        margin: 0cm;
+    }
+
+    #pull-bar {
+        display: none;
+    }
+
+    #pull {
+        display: none;
+    }
+
+    #signIn {
+        top: -200px;
+    }
+
+    #print-blocker {
+        display: inline-block;
+    }
+
+    .moveable {
+        z-index: 35;
+        outline: none;
+    }
+
+    .moveableheader {
+        z-index: 35;
+        outline: none;
+    }
+}
